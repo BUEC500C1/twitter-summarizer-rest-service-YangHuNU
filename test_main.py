@@ -79,7 +79,7 @@ else:
 		try: 
 			q = queue.Queue(maxsize=4)
 			for i in range(thread_num):
-				q.put(str(i))
+				q.put(data[str(i)])
 			# Get and convert tweets to image
 			for i in range(thread_num):
 				t2 = threading.Thread(name="Tweets to image", target=twit_to_image_no_key, args=(q,i,))
