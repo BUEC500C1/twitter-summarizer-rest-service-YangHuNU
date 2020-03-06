@@ -3,7 +3,6 @@
   {% for field in form %}
     <tr>
     <td>{{ field.name }}</td><td>{{ field }}</td>
-    <td>{{ field.label }}</td>
     </tr>
   {% endfor %}
 </table>
@@ -11,6 +10,14 @@
 
 <p>
 {% if result != None %}
+<!--
 <embed src="{{ result }}" type="video/x-msvideo"></embed>
+-->
+<video controls>
+  <source src="{{ result }}" type="video/mp4">
+  <source src="{{ result }}" type="video/ogg">
+</video>
+
+
 {% endif %}
 </p>

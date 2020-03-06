@@ -1,5 +1,11 @@
 # video-YangHuNU
 
+## Flask API
+The following screenshot is a sample output after flask implementation.  
+![](./doc/sample.png)
+
+To have the output run on AWS, go to [this address](http://demo2.eba-r47skcmu.us-east-2.elasticbeanstalk.com/)
+
 ## Tasks
 * Convert text into an image in a frame
 * Do a sequence of all texts and images in chronological order
