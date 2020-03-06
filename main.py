@@ -51,6 +51,26 @@ def executing():
 		t2.start()
 	q.join()
 
+def input_flask(ID0,ID1,ID2,ID3):
+	# Establish queue
+	q = queue.Queue(maxsize=4)
+
+	thread_num = 4
+
+	# Fetch API keys
+	ti = twitter_info('keys')
+
+	q.put(ID0)
+	q.put(ID1)
+	q.put(ID2)
+	q.put(ID3)
+
+	# Get and convert tweets to image
+	for i in range(thread_num):
+		t2 = threading.Thread(name="Tweets to image", target=twit_to_image, args=(q,ti,i,))
+		t2.daemon = True
+		t2.start()
+	q.join()
 
 def get_video():
 	generate_video()

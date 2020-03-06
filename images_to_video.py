@@ -3,7 +3,7 @@ import subprocess
 
 def generate_video():
     filename = "./images/img_" +"%d" + ".png"
-    output = './output/output.avi'
+    output = './static/output.avi'
     subprocess.call(['ffmpeg', '-framerate', '0.33', '-i', filename, output])
 
 if __name__ == "__main__":
